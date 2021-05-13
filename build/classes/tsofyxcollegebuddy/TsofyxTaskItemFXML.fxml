@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tsofyxcollegebuddy.TsofyxTaskItemFXMLController">
+   <padding>
+      <Insets left="10.0" right="10.0" />
+   </padding>
+   <bottom>
+      <HBox prefHeight="47.0" prefWidth="392.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="checkIcon" fill="#7f848a" radius="12.0" stroke="WHITE" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Circle>
+            <Label fx:id="taskName" prefHeight="34.0" prefWidth="200.0" text="College Algebra">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="4.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="taskBtn" mnemonicParsing="false" opacity="0.7" prefHeight="25.0" prefWidth="113.0" style="-fx-background-radius: 1em; -fx-background-color: #80ed99;" text="Planned">
+               <HBox.margin>
+                  <Insets left="100.0" top="12.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

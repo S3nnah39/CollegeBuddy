@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tsofyxcollegebuddy.TsofyxHomeFXMLController">
+    <stylesheets>
+        <URL value="@tsofyxhomefxml.css" />
+      <URL value="@tsofyxcollegebuddystyle.css" />
+    </stylesheets>
+   <children>
+      <VBox fx:id="sideTheme" layoutY="91.0" prefHeight="385.0" prefWidth="132.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <Label fx:id="dashboard" alignment="CENTER" onMouseClicked="#loadDashboard" prefHeight="32.0" prefWidth="132.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="graduationPlan" alignment="CENTER" onMouseClicked="#loadGraduationPlan" prefHeight="28.0" prefWidth="132.0" text="Graduation Plan" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="budget" alignment="CENTER" onMouseClicked="#loadBudget" prefHeight="33.0" prefWidth="132.0" text="Budget" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="signOut" mnemonicParsing="false" onAction="#signUserOut" style="-fx-background-color: transparent; -fx-border-color: white;" text="Sign Out" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="60.0" top="60.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <HBox fx:id="headerTheme" prefHeight="56.0" prefWidth="700.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/TsofyxUserPic.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Text fx:id="userName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </Text>
+            <Button fx:id="themeBtn" mnemonicParsing="false" onAction="#changeTheme" style="-fx-background-radius: 2%;" styleClass="shadow" stylesheets="@tsofyxcollegebuddystyle.css" text="Theme" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="490.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="details" layoutX="207.0" layoutY="101.0" prefHeight="296.0" prefWidth="400.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css" visible="false">
+         <children>
+            <Label fx:id="infoAboutOptions" text="More Info" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="about" alignment="CENTER" layoutY="63.0" prefHeight="28.0" prefWidth="132.0" text="About">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="collegeBuddyImage" fitHeight="249.0" fitWidth="339.0" layoutX="242.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/TsofyxAbout.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="481.0" layoutY="421.0" text="\@CS3330 Tasha Ogoti">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="aboutPageInfo" layoutX="147.0" layoutY="338.0" prefHeight="94.0" prefWidth="533.0" text="College Buddy" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="collegeBuddyLabel" alignment="CENTER" layoutX="193.0" layoutY="284.0" prefHeight="58.0" prefWidth="476.0" text="COLLEGE BUDDY">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="47.0" />
+         </font>
+      </Label>
+      <Button layoutX="614.0" layoutY="78.0" mnemonicParsing="false" onAction="#showMoreInfo" style="-fx-border-color: black;" styleClass="shadow" stylesheets="@tsofyxcollegebuddystyle.css" text="Learn More" />
+   </children>
+</AnchorPane>

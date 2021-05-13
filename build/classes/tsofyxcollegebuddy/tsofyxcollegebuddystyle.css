@@ -1,0 +1,20 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.gradient{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #00296b, #003f88);
+}
+.gradient1{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #47126b, #571089);
+}
+.gradient2{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #D91F4E, #FF8546);
+}
+
+.shadow{
+    -fx-background-color: rgba(255,255,255,.2);
+}

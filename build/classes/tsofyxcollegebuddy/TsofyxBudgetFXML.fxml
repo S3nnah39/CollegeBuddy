@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tsofyxcollegebuddy.TsofyxBudgetController">
+   <children>
+      <VBox fx:id="sideTheme" layoutY="56.0" prefHeight="398.0" prefWidth="132.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <Label fx:id="about" alignment="CENTER" onMouseClicked="#loadAbout" prefHeight="28.0" prefWidth="132.0" text="About" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="132.0" text="Dashboard" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="graduationPlan" alignment="CENTER" onMouseClicked="#loadGraduationPlan" prefHeight="28.0" prefWidth="132.0" text="Graduation Plan" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="33.0" prefWidth="132.0" style="-fx-background-color: white;" text="Budget">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="signOut" mnemonicParsing="false" onAction="#signUserOut" style="-fx-background-color: transparent; -fx-border-color: white;" text="Sign Out" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="60.0" top="60.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <HBox fx:id="headerTheme" prefHeight="56.0" prefWidth="700.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/TsofyxUserPic.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Text fx:id="userName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </Text>
+            <Button fx:id="themeBtn" mnemonicParsing="false" onAction="#changeTheme" style="-fx-background-radius: 2%;" styleClass="shadow" stylesheets="@tsofyxcollegebuddystyle.css" text="Theme" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="490.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="160.0" layoutY="98.0" prefHeight="100.0" prefWidth="179.0" style="-fx-background-radius: 5%;" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <Text fill="#e1d6d6" strokeType="OUTSIDE" strokeWidth="0.0" text="VISA">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Text fill="#ebebeb" strokeType="OUTSIDE" strokeWidth="0.0" text="**** **** **** 1234" wrappingWidth="141.783203125">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="80.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Label layoutX="415.0" layoutY="92.0" text="Income:">
+         <font>
+            <Font name="Calibri" size="19.0" />
+         </font>
+      </Label>
+      <Text layoutX="492.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+         <font>
+            <Font name="Calibri Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="studentIncome" layoutX="514.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500.60" wrappingWidth="83.23046875">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Text>
+      <PieChart fx:id="expensesPieChart" animated="false" labelLineLength="1.0" layoutX="164.0" layoutY="238.0" legendSide="LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="195.0" title="Expenses" />
+      <Label layoutX="398.0" layoutY="129.0" text="Expenses:">
+         <font>
+            <Font name="Calibri" size="19.0" />
+         </font>
+      </Label>
+      <Text layoutX="492.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+         <font>
+            <Font name="Calibri Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="studentExpenses" layoutX="514.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="380.55" wrappingWidth="83.23046875">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Text>
+      <LineChart fx:id="incomeLineChart" layoutX="392.0" layoutY="241.0" prefHeight="190.0" prefWidth="252.0" title="Income">
+        <xAxis>
+          <CategoryAxis fx:id="monthXAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="amountYaxis" label="Amount" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button fx:id="generateReport" layoutX="530.0" layoutY="419.0" mnemonicParsing="false" onAction="#generateExpenditureReport" text="Generate Report" />
+      <HBox fx:id="addExpenseBox" layoutX="346.0" layoutY="164.0" prefHeight="84.0" prefWidth="354.0" visible="false">
+         <children>
+            <Label prefHeight="69.0" prefWidth="83.0" text="Description:      Amount:" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <VBox prefHeight="84.0" prefWidth="204.0">
+               <children>
+                  <TextField fx:id="expenseDescription" promptText="E.g Shopping">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="expenseAmount" promptText="Enter Amount" />
+               </children>
+            </VBox>
+            <Button fx:id="addNewExpense" mnemonicParsing="false" onAction="#addExpense" style="-fx-border-color: black;" styleClass="shadow" stylesheets="@tsofyxcollegebuddystyle.css" text="Enter">
+               <HBox.margin>
+                  <Insets left="5.0" top="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="viewExpenseList" layoutX="298.0" layoutY="419.0" mnemonicParsing="false" onAction="#showExpenseList" text="View List" />
+      <ImageView fx:id="changeExpenses" fitHeight="30.0" fitWidth="30.0" layoutX="610.0" layoutY="129.0" onMouseClicked="#editExpensesText" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/TsofyxPlus.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="changeIncome" fitHeight="25.0" fitWidth="30.0" layoutX="608.0" layoutY="92.0" onMouseClicked="#editIncomeText" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/TsofyxPlus.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

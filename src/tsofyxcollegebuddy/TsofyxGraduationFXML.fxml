@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="tsofyxcollegebuddy.TsofyxGraduationController">
+   <children>
+      <HBox fx:id="headerTheme" prefHeight="56.0" prefWidth="700.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/TsofyxUserPic.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Text fx:id="userName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </Text>
+            <Button fx:id="themeBtn" mnemonicParsing="false" onAction="#changeTheme" style="-fx-background-radius: 2%;" styleClass="shadow" stylesheets="@tsofyxcollegebuddystyle.css" text="Theme" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="490.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox fx:id="sideTheme" layoutY="56.0" prefHeight="411.0" prefWidth="132.0" styleClass="gradient" stylesheets="@tsofyxcollegebuddystyle.css">
+         <children>
+            <Label fx:id="about" alignment="CENTER" prefHeight="28.0" prefWidth="132.0" text="About" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="dashboard" alignment="CENTER" onMouseClicked="#loadDashboard" prefHeight="32.0" prefWidth="132.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="graduationPlan" alignment="CENTER" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: white;" text="Graduation Plan">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="budget" alignment="CENTER" onMouseClicked="#loadBudget" prefHeight="33.0" prefWidth="132.0" text="Budget" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="signOut" mnemonicParsing="false" onAction="#signUserOut" style="-fx-background-color: transparent; -fx-border-color: white;" text="Sign Out" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="60.0" top="60.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Button fx:id="freshman" layoutX="185.0" layoutY="101.0" mnemonicParsing="false" onAction="#openFreshmanCourse" prefHeight="282.0" prefWidth="98.0" style="-fx-background-color: #ffc300;" text="FIRST YEAR" wrapText="true">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="32.0" />
+         </font>
+      </Button>
+      <Pane fx:id="semesterPane" layoutX="290.0" layoutY="80.0" prefHeight="330.0" prefWidth="395.0" visible="false">
+         <children>
+            <Label fx:id="courseListLabel" alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="42.0" prefWidth="392.0" style="-fx-background-color: #ffc300;" text="Course List:">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="courseList" layoutX="2.0" layoutY="42.0" prefHeight="285.0" prefWidth="395.0">
+               <content>
+                  <VBox fx:id="vTaskItems" layoutX="23.0" prefHeight="275.0" prefWidth="385.0" />
+               </content>
+            </ScrollPane>
+            <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="298.0" layoutY="8.0" onMouseClicked="#addCourse" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/TsofyxAdd.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Button fx:id="sophomore" layoutX="310.0" layoutY="101.0" mnemonicParsing="false" onAction="#openSophomoreCourse" prefHeight="282.0" prefWidth="98.0" style="-fx-background-color: #3d348b;" text="SECOND YEAR" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="junior" layoutX="435.0" layoutY="101.0" mnemonicParsing="false" onAction="#openJuniorCourse" prefHeight="282.0" prefWidth="98.0" style="-fx-background-color: #d81159;" text="THIRD YEAR" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="senior" layoutX="560.0" layoutY="101.0" mnemonicParsing="false" onAction="#openSeniorCourse" prefHeight="282.0" prefWidth="98.0" style="-fx-background-color: #64dfdf;" text="FOURTH YEAR" wrapText="true">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
